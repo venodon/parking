@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\VisitSearch;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -26,6 +27,12 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+        $searchModel = new VisitSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider->sort->defaultOrder = ['id' => SORT_DESC];
+        return $this->render('index', [
+            'searchModel'  => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
     }
 }
