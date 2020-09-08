@@ -7,6 +7,7 @@ $db = require __DIR__.'/db.php';
 
 $config = [
     'id'         => 'basic',
+    'name'       => 'Parking',
     'basePath'   => dirname(__DIR__),
     'bootstrap'  => ['log'],
     'aliases'    => [
@@ -53,6 +54,8 @@ $config = [
             'enableStrictParsing' => true,
             'showScriptName'      => false,
             'rules'               => [
+                ''           => 'site/index',
+                'site/index' => 'site/index',
                 ['class' => UrlRule::class, 'controller' => 'visit', 'patterns' => ['DELETE' => 'exit', 'POST' => 'enter']],
             ],
         ]
