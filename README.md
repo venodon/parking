@@ -1,9 +1,9 @@
-#Установка: 
-###composer install
-###настраиваем подключение в config/db.php
-###php yii migrate
+# Установка: 
+### composer install
+### настраиваем подключение в config/db.php
+### php yii migrate
 
-#Запросы
+# Запросы
 ### Шлются на http://{domain}/api/visits
 ### POST на заезд
 ### DELETE на выезд
