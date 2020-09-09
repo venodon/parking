@@ -1,8 +1,8 @@
 <?php
 
-namespace app\controllers;
+namespace app\modules\api\controllers;
 
-use app\helpers\NumberHelper;
+use app\modules\api\helpers\NumberHelper;
 use app\models\Visit;
 use yii\rest\Controller;
 

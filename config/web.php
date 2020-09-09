@@ -14,6 +14,11 @@ $config = [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
+    'modules' => [
+        'api' => [
+            'class' => 'app\modules\api\Api',
+        ],
+    ],
     'components' => [
         'request'      => [
             'parsers'             => [
@@ -56,7 +61,7 @@ $config = [
             'rules'               => [
                 ''           => 'site/index',
                 'site/index' => 'site/index',
-                ['class' => UrlRule::class, 'controller' => 'visit', 'patterns' => ['DELETE' => 'exit', 'POST' => 'enter']],
+                ['class' => UrlRule::class, 'controller' => 'api/visit', 'patterns' => ['DELETE' => 'exit', 'POST' => 'enter']],
             ],
         ]
     ],
